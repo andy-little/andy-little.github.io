@@ -27,6 +27,12 @@ body {
           transform: rotate(-13deg);
 }
 
+a {
+  text-decoration: none;
+  font-size: inherit;
+  color: inherit;
+}
+
 .logo {
   max-width: 21em;
   width: 94%;
@@ -47,6 +53,8 @@ body {
 }
 
 .link {
+  -webkit-box-shadow: 0px 0px 12px 2px #c22e26;
+          box-shadow: 0px 0px 12px 2px #c22e26;
   max-width: 400px;
   width: 92%;
   border-radius: 5px;
@@ -56,6 +64,20 @@ body {
   background-color: #f03931;
 }
 
+.link:active {
+  -webkit-box-shadow: 0px 0px 0px 0px #c22e26;
+          box-shadow: 0px 0px 0px 0px #c22e26;
+  -webkit-transition: boxshadow 200ms ease-in-out;
+  transition: boxshadow 200ms ease-in-out;
+}
+
+.link:hover {
+  -webkit-box-shadow: 0px 0px 4px 1px #c22e26;
+          box-shadow: 0px 0px 4px 1px #c22e26;
+  -webkit-transition: boxshadow 1000ms ease-in-out;
+  transition: boxshadow 1000ms ease-in-out;
+}
+
 .link i {
   color: white;
   font-size: 1.8em;
@@ -63,7 +85,7 @@ body {
   height: 30px;
 }
 
-.link .anchor {
+.link span {
   color: white;
   text-decoration: none;
   font-size: 1.3em;
@@ -74,7 +96,5 @@ body {
 .link .invisible {
   width: 30px;
   height: 30px;
-  /*    border: white solid 1px;
-        background-color: white; */
 }
 /*# sourceMappingURL=styles.css.map */

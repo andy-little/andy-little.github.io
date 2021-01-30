@@ -26,7 +26,11 @@ body {
     z-index: -100;
     transform: rotate(-13deg);
 }
-
+a {
+    text-decoration: none;
+    font-size: inherit;
+    color: inherit;
+}
 .logo {
     max-width: 21em;
     width: 94%;
@@ -43,7 +47,7 @@ body {
 
 .link {
 
-
+    box-shadow: 0px 0px 12px 2px $dred;
     max-width: 400px;
     width: 92%;
     border-radius: 5px;
@@ -51,6 +55,14 @@ body {
     padding: 12px 20px;
     border: solid 3px $green; 
     background-color: $red;
+    &:active{
+        box-shadow: 0px 0px 0px 0px $dred;
+        transition: boxshadow 200ms ease-in-out;
+    }
+    &:hover{
+        box-shadow: 0px 0px 4px 1px $dred;
+        transition: boxshadow 1000ms ease-in-out;
+    }
 
     i {
         color: white;
@@ -60,7 +72,7 @@ body {
 
     }
 
-    .anchor {
+    span {
         color: white;
         text-decoration: none;
         font-size: 1.3em;
@@ -72,8 +84,6 @@ body {
     .invisible {
         width: 30px;
         height: 30px;
-     /*    border: white solid 1px;
-        background-color: white; */
     }
 
 }

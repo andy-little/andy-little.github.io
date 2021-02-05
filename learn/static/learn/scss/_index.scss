@@ -1,0 +1,53 @@
+.index {
+
+    h4, h3, h2 {
+        color: $main;
+    }
+    .rule {
+        background-color: $main;
+    }
+    .hero_container {
+        display: flex;
+        background-color: $main;
+        justify-content: center;
+        margin: 0 auto 0 auto;
+        margin-bottom: 1em;
+        
+        .hero {
+            max-width: 1200px;
+            background: $main;
+            height: 15em;
+            color: white;
+            padding-top: 1em;
+            
+
+            img {
+                height: 100%;
+                margin-bottom: 0;
+            }
+            h1 {
+                text-align: center;
+                margin: 0 0 0 .5em;
+                @media screen and (max-width: 1180px){
+                    font-size: 3em;
+                }
+                @media screen and (max-width: 1033px){
+                    font-size: 2.5em;
+                }
+                
+            }
+        }
+    }
+
+    .preramble {
+
+        section {
+            flex: 1;
+            &:not(:last-child) {
+                margin-right: $column_space;
+            }
+        }
+
+    }
+    
+}

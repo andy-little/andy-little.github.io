@@ -1,0 +1,116 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    transform: translateX(0%);
+    transition: all ease-in-out $sidebar_speed;
+    z-index: 50;
+    width: $sidebar_width;
+    height: 100%;
+    background-color: white;
+    color: $main;
+    box-shadow: 0px 0px 4px .1px rgb(221, 221, 221);
+    padding: 4.5em 1.5em 1.5em 1.5em;
+
+    @include breakpoint-down(small){
+        width: 100%;
+        // figure out ho to stop scroll
+    }
+
+    &.sidebar_closed {
+        
+        transform: translateX(-100%);
+        transition: all ease-in-out $sidebar_speed;
+    }
+
+    .close_btn {
+        text-align: right;
+        i {
+            font-size: 1.5em;
+            text-align: center;
+            &:hover {
+                color: $menu;
+                cursor: pointer;
+            }
+        }
+    }
+
+
+    .chapter {
+        margin-top: .7em;
+    
+        .subchapter {
+            //display: none;
+            height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transform: scaleY(0);
+            transition: transform opacity ease-in-out .4s, ease-in-out .1s;
+            
+        }
+        // PLUS AND MINUS BUTTONS
+        i {
+            font-size: 1.15em;
+            margin-left: .6em;
+            &:hover {
+                color: $menu;
+            }
+        }
+
+        .fa-minus-square {
+            display: none;
+        }
+
+        .fa-plus-square {
+            display: inline-block;
+        }
+        // shows sub chaps and swithces plus to minus icon
+        &.show_sub_chaps{
+
+            .subchapter {
+                opacity: 1;
+                height: 100%;
+                overflow: visible;
+                transform: scaleY(1);
+                transition: opacity ease-in-out .4s, transform ease-in-out .1s;
+            }
+        
+            .fa-minus-square {
+                display: inline-block;
+            }
+        
+            .fa-plus-square {
+                display: none;
+            }
+        }
+    }
+
+
+
+    .side_links {
+        a {
+            display: inline-block;
+            color: $main;
+            margin: 0;
+            font-family: $main_font;
+            font-size: $medium_text;
+
+/*             &:last-child {
+                margin-bottom: 0;
+            }
+            &:first-child {
+                margin-top: 1.5em;
+            }  */
+
+            &.sub_link {
+                display: block;
+                color: rgb(95, 114, 114);
+                font-size: $small_text;
+                margin: .8em 0 0 .5em;
+
+                &:hover {
+                    color: $menu;
+                }
+            }
+        }
+    }
+}

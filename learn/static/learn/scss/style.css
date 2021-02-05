@@ -84,17 +84,6 @@ a, a:visited, a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  /* .hide-for-mobile {
-    @include breakpoint-down(medium){
-        display: none;
-    }
-
-}
-
-.hide-for-desktop {
-    @include breakpoint-up(large){
-        display: none;
-    } */
 }
 
 .flex-jc-sb {
@@ -115,15 +104,32 @@ a, a:visited, a:hover {
           align-items: center;
 }
 
-.flex .marg-l-auto {
+.flex-ai-e {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.marg-l-auto {
   margin-left: auto;
 }
 
-.flex .m-auto {
+.m-auto {
   margin-left: auto;
   margin-right: auto;
 }
 
+/* .hide-for-mobile {
+    @include breakpoint-down(medium){
+        display: none;
+    }
+
+}
+
+.hide-for-desktop {
+    @include breakpoint-up(large){
+        display: none;
+    } */
 nav {
   position: fixed;
   width: 100%;
@@ -138,7 +144,7 @@ nav {
 
 nav *:hover {
   cursor: pointer;
-  color: #0071bc;
+  color: #f79434;
 }
 
 nav a {
@@ -164,7 +170,7 @@ nav .fa-bars {
 }
 
 nav .fa-bars:hover {
-  color: #0071bc;
+  color: #f79434;
 }
 
 nav .fa-bars.hidden {
@@ -231,7 +237,7 @@ nav .fa-bars.hidden {
 }
 
 .sidebar .close_btn i:hover {
-  color: #0071bc;
+  color: #f79434;
   cursor: pointer;
 }
 
@@ -240,12 +246,24 @@ nav .fa-bars.hidden {
 }
 
 .sidebar .chapter .subchapter {
-  display: none;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transition: ease-in-out .1s, -webkit-transform opacity ease-in-out .4s;
+  transition: ease-in-out .1s, -webkit-transform opacity ease-in-out .4s;
+  transition: transform opacity ease-in-out .4s, ease-in-out .1s;
+  transition: transform opacity ease-in-out .4s, ease-in-out .1s, -webkit-transform opacity ease-in-out .4s;
 }
 
 .sidebar .chapter i {
   font-size: 1.15em;
   margin-left: .6em;
+}
+
+.sidebar .chapter i:hover {
+  color: #f79434;
 }
 
 .sidebar .chapter .fa-minus-square {
@@ -257,7 +275,15 @@ nav .fa-bars.hidden {
 }
 
 .sidebar .chapter.show_sub_chaps .subchapter {
-  display: inline-block;
+  opacity: 1;
+  height: 100%;
+  overflow: visible;
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+  -webkit-transition: opacity ease-in-out .4s, -webkit-transform ease-in-out .1s;
+  transition: opacity ease-in-out .4s, -webkit-transform ease-in-out .1s;
+  transition: opacity ease-in-out .4s, transform ease-in-out .1s;
+  transition: opacity ease-in-out .4s, transform ease-in-out .1s, -webkit-transform ease-in-out .1s;
 }
 
 .sidebar .chapter.show_sub_chaps .fa-minus-square {
@@ -284,9 +310,13 @@ nav .fa-bars.hidden {
 
 .sidebar .side_links a.sub_link {
   display: block;
-  color: #f79434;
+  color: #5f7272;
   font-size: 0.95em;
   margin: .8em 0 0 .5em;
+}
+
+.sidebar .side_links a.sub_link:hover {
+  color: #f79434;
 }
 
 .index h4, .index h3, .index h2 {
@@ -305,8 +335,7 @@ nav .fa-bars.hidden {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 0 auto 0 auto;
-  margin-bottom: 1em;
+  margin: 0 auto 1em auto;
 }
 
 .index .hero_container .hero {
@@ -314,12 +343,32 @@ nav .fa-bars.hidden {
   background: #00b6ae;
   height: 15em;
   color: white;
-  padding-top: 1em;
+  padding: 1em .3em 0 .3em;
+}
+
+.index .hero_container .hero .title {
+  height: 100%;
 }
 
 .index .hero_container .hero img {
   height: 100%;
   margin-bottom: 0;
+}
+
+@media screen and (max-width: 400px) {
+  .index .hero_container .hero img {
+    height: 80%;
+  }
+}
+
+.index .hero_container .hero img.temp {
+  display: inline-block;
+}
+
+@media screen and (max-width: 720px) {
+  .index .hero_container .hero img.temp {
+    display: none;
+  }
 }
 
 .index .hero_container .hero h1 {
@@ -336,6 +385,18 @@ nav .fa-bars.hidden {
 @media screen and (max-width: 1033px) {
   .index .hero_container .hero h1 {
     font-size: 2.5em;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .index .hero_container .hero h1 {
+    font-size: 2em;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .index .hero_container .hero h1 {
+    font-size: 1.5em;
   }
 }
 

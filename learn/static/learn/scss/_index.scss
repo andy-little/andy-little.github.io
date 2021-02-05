@@ -10,20 +10,36 @@
         display: flex;
         background-color: $main;
         justify-content: center;
-        margin: 0 auto 0 auto;
-        margin-bottom: 1em;
+        margin: 0 auto 1em auto;
+        //margin-bottom: 1em;
+        
         
         .hero {
             max-width: 1200px;
             background: $main;
             height: 15em;
             color: white;
-            padding-top: 1em;
+            padding: 1em .3em 0 .3em;
             
+            .title{
+                height: 100%;
+            }
 
             img {
                 height: 100%;
                 margin-bottom: 0;
+
+                @media screen and (max-width: 400px) {
+                    height: 80%;
+                }
+
+                &.temp {
+                    display: inline-block;
+                    @media screen and (max-width: 720px) {
+                        display: none;
+                    }
+                }
+                
             }
             h1 {
                 text-align: center;
@@ -33,6 +49,12 @@
                 }
                 @media screen and (max-width: 1033px){
                     font-size: 2.5em;
+                }
+                @media screen and (max-width: 650px){
+                    font-size: 2em;
+                }
+                @media screen and (max-width: 400px){
+                    font-size: 1.5em;
                 }
                 
             }

@@ -78,14 +78,19 @@ a, a:visited, a:hover {
         align-items: center;
     }
 
-    .marg-l-auto {
-        margin-left: auto;
-    }
-    .m-auto{
-        margin-left: auto;
-        margin-right: auto;
+    &-ai-e{
+        align-items: flex-end;
     }
 
+} 
+
+.marg-l-auto {
+    margin-left: auto;
+}
+.m-auto{
+    margin-left: auto;
+    margin-right: auto;
+}
     // visibility
 /* .hide-for-mobile {
     @include breakpoint-down(medium){
@@ -98,12 +103,11 @@ a, a:visited, a:hover {
     @include breakpoint-up(large){
         display: none;
     } */
-} 
 
 nav {
     *:hover {
         cursor: pointer;
-        color: $blue;
+        color: $menu;
     }
     position: fixed;
     width: 100%;
@@ -133,7 +137,7 @@ nav {
         color: $main;
         margin-right: $medium_text;
         &:hover {
-            color: $blue;
+            color: $menu;
         }
         &.hidden {
             display: none;
